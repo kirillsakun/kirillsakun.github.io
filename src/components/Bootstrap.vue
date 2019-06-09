@@ -1,0 +1,30 @@
+<template>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+			<div class="col-md-4"></div>
+		</div>
+	</div>
+
+</template>
+<script>
+export default {
+	name: 'App',
+	data(){
+		return{
+			
+		}
+	}
+}
+</script>
+
+<style lang="scss" scooped>
+
+</style>
+
+<style lang="scss">
+</style>
+

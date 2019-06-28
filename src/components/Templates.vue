@@ -3,8 +3,8 @@
 		<section id="cards">
 			<h3 class="section-title">Cards</h3>
 			<div class="card card-0">
-				<div class="main-part"></div>
-				<div class="secondary-part"><h4>Friends</h4></div>
+				<div class="background"></div>
+				<div class="description"><h4>Friends</h4></div>
 			</div>
 			<div class="card card-1">
 				<div class="background"></div>
@@ -20,7 +20,7 @@
 			<div class="card card-3">
 				<div class="background"></div>
 				<h4>Traveling</h4>
-			</div>zxcz
+			</div>
 		</section>
 
 	</div>
@@ -41,6 +41,11 @@ export default {
 <style lang="scss" scoped>
 
 $b-r: 2vh;
+
+#templates{
+	padding-top: 12vh;
+}
+
 .section-title{
 	font-size: 2rem;
 }
@@ -60,7 +65,6 @@ $b-r: 2vh;
 		border: 1px solid;
 		border-radius: $b-r;
 		*{
-			border-radius: $b-r;
 			transition: .5s;
 		}
 		h4{
@@ -70,6 +74,7 @@ $b-r: 2vh;
 			letter-spacing: .3rem;
 		}
 		.background{
+			border-radius: $b-r;
 			width: 100%;
 			height: 100%;
 			background-size: auto 100%;
@@ -79,7 +84,7 @@ $b-r: 2vh;
 
 	}
 	.card-0{
-		.main-part{
+		.background{
 			background-image: url('https://pp.userapi.com/c7003/v7003319/40d24/ALeYXnWlbmw.jpg');
 			background-size: auto 100%;
 			background-repeat: no-repeat;
@@ -91,7 +96,8 @@ $b-r: 2vh;
 			z-index: 5;
 			filter: brightness(70%);
 		}
-		.secondary-part{
+		.description{
+			border-radius: $b-r;
 			text-align: right;
 			padding: 1rem;
 			color: rgb(236, 236, 236);
@@ -106,7 +112,7 @@ $b-r: 2vh;
 			z-index: 4;
 		}
 		&:hover{
-			.main-part{
+			.background{
 				filter: brightness(100%);
 				width: 100%;
 			}
@@ -147,7 +153,9 @@ $b-r: 2vh;
 				right: 50%;
 				transform: translateX(50%);
 				font-weight: 500;
+				text-decoration: underline;
 			}
+			
 		}
 	}
 	.card-2{
@@ -229,7 +237,6 @@ $b-r: 2vh;
 				-webkit-text-fill-color: transparent;
 			}
 			.background{
-				filter: brightness(50%);
 				background-size: auto 150%;
 			}
 		}

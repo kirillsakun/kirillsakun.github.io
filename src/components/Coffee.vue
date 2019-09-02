@@ -3,7 +3,7 @@
 		<img src="https://pp.userapi.com/c824603/v824603840/50edc/2wMhrLsEfgc.jpg" id="pic1" alt="">
 		<div class="content">
 			<div id="text1">
-				<h1>About coffee</h1>
+				<h1></h1>
 				<p>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras in venenatis lectus. Fusce imperdiet aliquet ipsum, id interdum turpis fringilla eu. Praesent ac est vitae magna commodo auctor. Sed tellus lorem, sagittis in vehicula ut, tempor nec lacus. Integer tellus est, consectetur nec commodo nec, lacinia in dui. Duis quis interdum lacus, viverra consequat dui. Etiam tempus velit sed sodales suscipit.
 				</p>

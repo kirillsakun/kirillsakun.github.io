@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import Jquery from "jquery";
 
 export default {
 		name: 'App',
@@ -90,37 +89,6 @@ export default {
 		}
 	}
 
-	Jquery(window).bind('scroll', function (e) {
-		parallaxScroll();
-		headerOpacity();
-	});
-
-function headerOpacity() {
-	let scrolled = Jquery(window).scrollTop();
-	if (scrolled > 10) {
-		Jquery('header').css({
-			opacity: 1.0 - scrolled * 0.0016
-		});
-	}
-	else{
-		Jquery('header').css({
-			opacity: 1.0
-		});
-	}
-}
-
-
-function parallaxScroll() {
-	let scrolled = Jquery(window).scrollTop();
-
-	Jquery('#pic1').css('top', (0 - (scrolled * .3)) + 'px');
-	if(scrolled>50){
-		Jquery('#pic1').css('filter', `brightness(${100 - scrolled/24}%)`);
-	}
-	else{
-		Jquery('#pic1').css('filter', 'brightness(100%)');
-	}	
-}
 
 </script>
 

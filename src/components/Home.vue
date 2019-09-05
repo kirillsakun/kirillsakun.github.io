@@ -105,7 +105,7 @@ export default {
 							}
 						],
 						description: `I learned the basics of the language, working with objects, arrays, classes, DOM.
-						Also I have some skills with jQuery, but recently I try to replace it with pure js`
+						Also I have some skills with jQuery, but recently I try to replace it with pure js.`
 					},
 					{
 						title: 'Vue.js',
@@ -137,8 +137,8 @@ export default {
 								title: 'github'
 							}
 						],
-						description: `I know the basics of working with PP,
-						understand the advantages of using it`
+						description: `I know the basics of working with GitHub,
+						understand the advantages of using it.`
 					},
 					{
 						title: 'Node.js',

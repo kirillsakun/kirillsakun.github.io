@@ -102,7 +102,7 @@
 
           <button class="elephant-button" @click.prevent="addRectangle()">Add rectangle</button>
         </form>
-        <p v-if="isCanvasCreated">Doubleclick on canvas to use bucked fill</p>
+        <p v-if="isCanvasCreated">Doubleclick on canvas to use bucked fill.</p>
         <form id="other-operatons" class="elephant-form" v-if="isCanvasCreated">
           <button class="elephant-button" @click.prevent="clearCanvas()">Clear all</button>
         </form>
@@ -127,14 +127,14 @@ export default {
     return {
       canvasWidth: "30",
       canvasHeight: "20",
-      lineX1: "1",
-      lineY1: "1",
-      lineX2: "5",
-      lineY2: "1",
-      rectangleX1: "5",
-      rectangleY1: "5",
-      rectangleX2: "10",
-      rectangleY2: "15",
+      lineX1: "",
+      lineY1: "",
+      lineX2: "",
+      lineY2: "",
+      rectangleX1: "",
+      rectangleY1: "",
+      rectangleX2: "",
+      rectangleY2: "",
       canvas: [],
       isCanvasCreated: false
     };
@@ -334,7 +334,7 @@ $vue-color: #41b883;
     h4 {
       font-weight: 300;
       font-size: 1.4rem;
-      font-family: Merienda "sans-serif";
+      font-family: $primary-font;
       letter-spacing: 0.3rem;
     }
     .background {
@@ -528,6 +528,13 @@ $vue-color: #41b883;
     margin: 0.1rem 0;
   }
 }
+.elephant-button,
+.elephant-form{
+  min-width: 20rem;
+}
+.elephant-input{
+  min-width: 3rem;
+}
 
 .elephant-button {
   font-family: $primary-font;
@@ -552,6 +559,7 @@ $vue-color: #41b883;
 #elephant {
   #input-part {
     width: 30%;
+    min-width: 22rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -617,6 +625,13 @@ $vue-color: #41b883;
           content: "o";
         }
       }
+    }
+  }
+}
+@media (max-width: 670px){
+  #elephant{
+    #input-part{
+      width: 100%;
     }
   }
 }

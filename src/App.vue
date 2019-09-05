@@ -33,7 +33,6 @@
 
 
 <script>
-import Jquery from "jquery";
 
 export default {
   name: "App",
@@ -82,6 +81,7 @@ function headerOpacity() {
 </script>
 
 <style lang="scss">
+
 @import url("https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css");
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap");
@@ -272,12 +272,9 @@ section {
 footer {
   padding: 0 2%;
   z-index: 10;
-  position: relative;
-  bottom: 0;
-  flex-shrink: 0;
   width: 100%;
+	margin-top: 0 !important;
   height: $header-height;
-
   border-top: 1px solid red;
   border-bottom: (0.03 * $header-height) solid red;
   border-image: linear-gradient(to left, #40e0d0, #ff8c00, #ff0080);

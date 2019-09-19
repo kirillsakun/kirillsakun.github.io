@@ -38,15 +38,15 @@ export default {
   name: "App",
   data() {
     return {
-      companyTitle: "tortik_s_vishney",
       menuShow: false,
       mainMenuLinks: [
         { title: "Home", url: "/" },
         { title: "Templates", url: "/templates" },
-        //{ title: "Coffee", url: "/coffee" }
+        { title: "Test tasks", url: "/testtasks" },
+        { title: "Minsk coffee", url: "/minskcoffee" }
       ],
       socialMedia: [
-        { title: "Github", url: "https://github.com/tortiksvishney" },
+        { title: "Github", url: "https://github.com/sakunkirill" },
         {
           title: "Facebook",
           url: "https://www.facebook.com/profile.php?id=100010532382767"
@@ -69,13 +69,9 @@ window.addEventListener("scroll", function() {
 function headerOpacity() {
   let scrolled = window.pageYOffset;
   if (scrolled > 100) {
-    Jquery("header").css({
-      opacity: 1.0 - scrolled * 0.0033
-    });
+    document.getElementsByTagName('header')[0].style.opacity = 1.0 - scrolled * 0.0033;
   } else {
-    Jquery("header").css({
-      opacity: 1.0
-    });
+    document.getElementsByTagName('header')[0].style.opacity = 1.0;
   }
 }
 </script>
@@ -130,14 +126,28 @@ h5,
 h6 {
   font-family: $primary-font;
 }
+
 p {
   font-family: $secondary-font;
-  margin: 1rem 0;
+  margin: 0 0;
+  line-height: 1.8rem;
+	text-align: justify;
   width: 100%;
+}
+
+h3{
+	font-size: 2.3rem;
+	font-weight: 600;
+}
+button{
+	background: none;
+	border: none;
+  cursor: pointer;
 }
 a {
   text-decoration: none;
   color: $text-color;
+  cursor: pointer;
 }
 .col-bor {
   border-bottom: 2px solid red;
@@ -151,10 +161,13 @@ a {
 }
 .section-title {
   width: 100%;
-  font-size: 2.8rem;
+  font-size: 2rem;
   text-align: center;
   font-weight: 300;
-  margin: 1.3rem 0;
+  margin: 0;
+}
+.underheader-mg{
+  margin-top: $header-height;
 }
 header {
   position: fixed;
@@ -378,13 +391,10 @@ footer {
   opacity: 0;
 }
 
+
 @media (max-width: 1060px) {
   header {
     opacity: 1 !important;
-  }
-}
-@media (max-width: 670px) {
-  header {
     nav {
       justify-content: flex-start;
       flex-direction: column;

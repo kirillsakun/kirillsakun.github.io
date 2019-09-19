@@ -1,57 +1,49 @@
 <template>
 	<div id="home">
-		<!-- <img src="../assets/img/pic1.jpg" id="main-bg" alt=""> -->
-		<div class="content">
-			<div id="title">
-				<h1>Kirill Sakun</h1>
+		<div id="title">
+			<h1>Kirill Sakun</h1>
+			<p>
+				Junior Frontend developer
+			</p>
+		</div>
+		<section id="information" class="col-bor">
+			<div class="column" id="about-me">
+				<h4>About me</h4>
 				<p>
-					Junior Frontend developer
+					I'm student of BSUIR, faculty of Computer Design.
+					I can describe myself as an attentive to detail
+					(sometimes too attentive even where it is not necessary),
+					systematic and punctual person, able to learn a lot in a short time.
+					And if I do something, I do it well, and if not for the soul,
+					then for show.
+					<br>
 				</p>
 			</div>
-
-			<section id="information" class="col-bor">
-
-				<div class="column" id="about-me">
-					<h4>About me</h4>
-					<p>
-						I'm student of BSUIR, faculty of Computer Design.
-						I can describe myself as an attentive to detail
-						(sometimes too attentive even where it is not necessary),
-						systematic and punctual person, able to learn a lot in a short time.
-						And if I do something, I do it well, and if not for the soul,
-						then for show.
-						<br>
-						
-					</p>
-				</div>
-
-				<div class="column" id="my-photo">
-					<img src="../assets/img/me.png" alt="My photo">
-				</div>
-
-				<div class="column" id="personal-information">
-					<h4>Personal information</h4>
-					<ul>
-						<li v-for="item in personalInformation" :key="item.title" class="line">
-							<h5>{{item.title}}</h5><p v-html="item.info"></p>
-						</li>
-					</ul>
-				</div>
-			</section>
-			<section id="skills">
-				<h3>My skills</h3>
+			<div class="column" id="my-photo">
+				<img src="../assets/img/me.png" alt="My photo">
+			</div>
+			<div class="column" id="personal-information">
+				<h4>Personal information</h4>
 				<ul>
-					<li class="skill" v-for="(skill ,index) in mySkills" :key="skill.title"> 
-						<h5>{{skill.title}}</h5>
-						<!-- <div class="logos">
-							<img v-for="img in skill.img" :key="img.title" :src="img.url" :alt="img.title">
-						</div> -->
-						<p>{{skill.description}}</p>
-						<i>{{index+1}}</i>
+					<li v-for="item in personalInformation" :key="item.title" class="line">
+						<h5>{{item.title}}</h5><p v-html="item.info"></p>
 					</li>
 				</ul>
-			</section>
-		</div>
+			</div>
+		</section>
+		<section id="skills">
+			<h3>My skills</h3>
+			<ul>
+				<li class="skill" v-for="(skill ,index) in mySkills" :key="skill.title"> 
+					<h5>{{skill.title}}</h5>
+					<!-- <div class="logos">
+						<img v-for="img in skill.img" :key="img.title" :src="img.url" :alt="img.title">
+					</div> -->
+					<p>{{skill.description}}</p>
+					<i>{{index+1}}</i>
+				</li>
+			</ul>
+		</section>
 	</div>
 </template>
 
@@ -193,18 +185,7 @@ function parallaxId(el, koeficent) {
 
 <style lang="scss" scoped>
 
-.content{
-	box-sizing: unset;
-}
-p{
-	margin: 0;
-	line-height: 1.8rem;
-	text-align: justify;
-}
-h3{
-	font-size: 2.3rem;
-	font-weight: 600;
-}
+
 
 #title{
 	height: 100vh;
@@ -230,7 +211,6 @@ h3{
 		width: 100%;
 		height: 100%;
 		z-index: 3;
-
 		background-color: rgba(0, 0, 0, 0.425);
 	}
 	h1,p{
@@ -246,9 +226,7 @@ h3{
 	}
 }
 section{
-	z-index: 4;
-
-	
+	z-index: 4;	
 	.column{
 		display: flex;
 		flex-direction: column;
@@ -288,7 +266,7 @@ section{
 		margin: .0rem 0;
 		h5{
 			font-size: 1.0rem;
-			width: 6.2rem;
+			width: 6.5rem;
 			line-height: 1.8rem;
 		}
 		p{
@@ -305,6 +283,7 @@ $lineHeight: 2rem;
 	background-position: center 0;
 	background-repeat: no-repeat;
 	color: white;
+	padding-bottom: 0;
 	h3{
 		color: rgba(255, 255, 255, 0.856);
 		width: 100%;
@@ -385,7 +364,7 @@ $lineHeight: 2rem;
 }
 
 
-@media (max-width: 1024px) {
+@media (max-width: 1060px) {
 
 	#title{
 		width: 100%;
@@ -413,7 +392,7 @@ $lineHeight: 2rem;
 	}
 }
 
-@media (max-width: 670px){
+@media (max-width: 580px){
 
 	#information{
 		.column{

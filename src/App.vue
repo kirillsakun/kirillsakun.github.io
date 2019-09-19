@@ -46,17 +46,26 @@ export default {
         { title: "Minsk coffee", url: "/minskcoffee" }
       ],
       socialMedia: [
-        { title: "Github", url: "https://github.com/sakunkirill" },
+        {
+          title: "Github",
+          url: "https://github.com/sakunkirill"
+        },
         {
           title: "Facebook",
           url: "https://www.facebook.com/profile.php?id=100010532382767"
         },
-        { title: "Vk", url: "https://vk.com/kirill_sakun" },
+        {
+          title: "Vk",
+          url: "https://vk.com/kirill_sakun"
+        },
         {
           title: "Instagram",
           url: "https://www.instagram.com/tortik_s_vishney"
         },
-        { title: "Twitter", url: "https://twitter.com/sakun.krll" }
+        {
+         title: "Twitter",
+         url: "https://twitter.com/tortiksvishney"
+        }
       ]
     };
   }

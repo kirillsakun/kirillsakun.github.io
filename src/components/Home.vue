@@ -40,7 +40,7 @@
 						<img v-for="img in skill.img" :key="img.title" :src="img.url" :alt="img.title">
 					</div> -->
 					<p>{{skill.description}}</p>
-					<i>{{index+1}}</i>
+					<i>{{index + 1}}</i>
 				</li>
 			</ul>
 		</section>

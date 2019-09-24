@@ -41,8 +41,9 @@ export default {
 
   data() {
     return{
+      name: "MinskCoffee",
       submenuLinks: [
-        { title: "Coffee shops", url: "" },
+        { title: "Coffee shops", url: "/coffeeshops" },
         { title: "Favourites", url: "/favourites" },
       ],
       coffeeShops:[
@@ -163,27 +164,32 @@ export default {
   .subnav{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     border-bottom: 1px solid;
     nav{
       width: 100%;
       display: flex;
     }
     a{
+      //min-width: 11rem;
       padding: 1rem 0;
       margin-right: 2rem;
-        &:last-of-type {
-          margin-right: 0rem;
-        }
+      &:last-of-type {
+        margin-right: 0rem;
+      }
+      &.router-link-active h3{
+        font-weight: 400;
+      }
       h3{
         font-size: 1.4rem;
         font-weight: 300;
-        //text-decoration: underline;
+        text-decoration: underline;
       }
     }
   }
 
   .sheet{
     padding: 3rem 0;
-    justify-content: space-between;
+    //justify-content: space-evenly;
   }
 </style>

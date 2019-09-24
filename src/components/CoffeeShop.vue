@@ -4,11 +4,11 @@
 		<img :src="coffeeShop.img" :alt="coffeeShop.title">
 		<div class="col">
 			<h4>{{coffeeShop.title}}</h4>
-			<p>{{coffeeShop.description}}</p>
+			<p class="coffeeshop-description">{{coffeeShop.description}}</p>
 			<div class="row icons">
 				<i class="icon ion-md-flame" v-if="coffeeShop.roasters"></i>
 				<a :href="`https://www.instagram.com/${coffeeShop.instagram}`" target="_blank"><i class="icon ion-logo-instagram"></i></a>
-				<button><i class="icon ion-md-heart" @click="coffeeShop.liked = !coffeeShop.liked" :class="{ liked : coffeeShop.liked }"></i></button>
+				<button @click="coffeeShop.liked = !coffeeShop.liked"><i class="icon ion-md-heart" :class="{ liked : coffeeShop.liked }"></i></button>
 			</div>
 		</div>
 	</div>
@@ -16,6 +16,7 @@
 </template>
 
 <script>
+
 export default {
 	name:'coffeeShop',
 	props:{
@@ -41,6 +42,10 @@ export default {
 		height: 8rem;
 		margin-right: 5%;
 		border-radius: 50%;
+	}
+	.coffeeshop-description{
+
+		//padding: 0;
 	}
 	.col{
 		width: 70%;

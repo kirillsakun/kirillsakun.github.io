@@ -33,7 +33,7 @@ export default new Router({
       name: "MinskCoffee",
       component: MinskCoffee,
       children:[
-        { path: "", component: CoffeeShops },
+        { path: "coffeeshops", component: CoffeeShops },
         { path: "favourites", component: Favourites },
         //{ path: "favourites", component: Beans }
       ]

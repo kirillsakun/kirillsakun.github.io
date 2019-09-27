@@ -42,13 +42,12 @@ export default {
       mainMenuLinks: [
         { title: "Home", url: "/" },
         { title: "Templates", url: "/templates" },
-        { title: "Test tasks", url: "/testtasks" },
-        { title: "Minsk coffee", url: "/minskcoffee/coffeeshops" }
+        { title: "Test tasks", url: "/testtasks" }
       ],
       socialMedia: [
         {
           title: "Github",
-          url: "https://github.com/sakunkirill"
+          url: "https://github.com/kirillsakun"
         },
         {
           title: "Facebook",
@@ -115,6 +114,7 @@ html {
   box-sizing: border-box;
   overflow-x: hidden;
   scrollbar-width: none;
+  cursor: default;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -126,6 +126,7 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  cursor: inherit;
 }
 h1,
 h2,
@@ -142,11 +143,15 @@ p {
   line-height: 1.8rem;
 	text-align: justify;
   width: 100%;
+  cursor: default;
 }
 
 h3{
 	font-size: 2.3rem;
 	font-weight: 600;
+}
+input{
+  cursor: pointer;
 }
 button{
 	background: none;
@@ -177,6 +182,17 @@ a {
 }
 .underheader-mg{
   margin-top: $header-height;
+}
+.parenthesis{
+  flex-direction: column;
+  //padding-bottom: 0;
+  h1,h2{
+    margin-bottom: 2rem;
+  }
+  p{
+    text-align: left;
+    width: 50%;
+  }
 }
 header {  
   position: fixed;
@@ -429,6 +445,20 @@ footer {
     .slide-enter {
       top: 0;
       right: -100%;
+    }
+  }
+  .parenthesis{
+    p{
+      text-align: left;
+      width: 80%;
+    }
+  }
+}
+@media (max-width: 580px){
+  .parenthesis{
+    p{
+      text-align: left;
+      width: 100%;
     }
   }
 }

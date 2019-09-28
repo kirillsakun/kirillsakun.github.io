@@ -220,7 +220,8 @@ header {
   button {
     font-size: 1.4rem;
     color: $text-color;
-    padding: 1rem;
+    margin: 1rem;
+    padding: -1rem;
     background: none;
     border: none;
   }
@@ -255,13 +256,13 @@ header {
         height: 0.1rem;
         transition: transform 0.35s;
         transform: scaleX(0);
-        background: #93291e;
+        background: #93291e; /* fallback for old browsers */
         background: linear-gradient(
           to right,
           #ed213a,
           #93291e,
           #ed213a
-        );
+        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         z-index: 10;
       }
       &::before {
@@ -314,7 +315,7 @@ footer {
   height: $header-height;
   border-top: 1px solid red;
   border-bottom: (0.03 * $header-height) solid red;
-  border-image: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
+  border-image: linear-gradient(to left, #40e0d0, #ff8c00, #ff0080);
   border-image-slice: 1;
 
   display: flex;

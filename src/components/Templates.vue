@@ -208,7 +208,7 @@ $b-r: 2vh;
     .background {
       background-size: auto 100%;
       transition: 1s;
-      background-image: url(https://pp.userapi.com/c626616/v626616430/3cc7b/tFsEkPAabU0.jpg);
+      background-image: url("https://pp.userapi.com/c626616/v626616430/3cc7b/tFsEkPAabU0.jpg");
     }
     h4 {
       border-radius: 0;

@@ -1,5 +1,21 @@
 <template>
   <div id="templates" class="underheader-mg">
+    <section id="sites" class="col-bor">
+      <h3 class="section-title">Sites</h3>
+      <div class="site"
+      v-for="site in sites"
+      :key="site.title"
+      :style="{background: 'url('+ site.img +') no-repeat center, linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%)'}">
+        <a :href="site.url" target="_blank" class="site-disc">
+          <h4>{{site.title}}</h4>
+          <!-- <p>{{site.discription}}</p> -->
+          <div class="tags"> 
+            <i v-for="tag in site.tags"
+            :key="tag">{{tag}}</i>
+          </div>
+        </a>
+      </div>
+    </section>
     <section id="cards">
       <h3 class="section-title">Cards</h3>
       <div class="card card-0">
@@ -27,9 +43,38 @@
 </template>
 
 <script>
+import landing1 from '../assets/img/landing1.png';
+import minskcoffee from '../assets/img/minskcoffee.png'
+import soundgenerator from '../assets/img/soundgenerator.png'
 export default {
   name: "Templates",
-
+  data(){
+    return{
+      sites:[
+        {
+          title: 'Background sound generator',
+          url: 'https://kirillsakun.github.io/soundgenerator',
+          img: soundgenerator,
+          tags: ['HTML5', 'CSS3', 'SCSS', 'JS', 'Vue.js', 'Vue-cli'],
+          cond: true
+        },
+        {
+          title: 'Landing page',
+          url: 'https://kirillsakun.github.io/LandingPage',
+          img: landing1,
+          tags: ['HTML5', 'CSS3', 'SCSS'],
+          cond: true
+        },
+        {
+          title: 'Minsk coffee',
+          url: 'https://github.com/kirillsakun/minkscoffee',
+          img: minskcoffee,
+          tags: ['HTML5', 'CSS3', 'SCSS','JS', 'Vue.js', 'Vue-router', 'Vue-cli'],
+          cond: false
+        }
+      ]
+    }
+  }
 };
 </script>
 
@@ -39,17 +84,56 @@ $secondary-font: "Montserrat", sans-serif;
 $b-r: 2vh;
 
 
+#sites{
+  border-top: none;
+  .site{
+    height: 14.625rem;
+    width: 26rem;
+    border-radius: 1rem;
+    background-blend-mode: multiply;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-size: cover !important;
+  }
+
+  .site-disc{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    h4{
+      font-size: 1.7rem;
+    }
+  }
+  .tags{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    i{
+      font-size: .8rem;
+      padding: .25rem .5rem;
+      margin: .25rem;
+      border-radius: .25rem;
+      background: rgba(255, 255, 255, 0.2); 
+    }
+  }
+}
+
 #cards {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 100%;
 
   .card {
-    height: 30vh;
-    width: 44vh;
-    margin: 2vh;
+    height: 14rem;
+    width: 20rem;
+    margin: 0;
+    margin: 1rem 0;
     //border: 1px solid;
     border-radius: $b-r;
     * {
@@ -239,4 +323,27 @@ $b-r: 2vh;
     }
   }
 }
+@media(max-width: 1060px){
+  #sites{
+    flex-direction: column;
+    align-items: center;
+  }
+
+}
+@media(max-width: 750px){
+  #cards{
+    flex-direction: column;
+    align-items: center;
+  }
+  
+}
+@media(max-width: 560px){
+  #sites{
+    .site{
+      width: 100%;
+    }
+  }
+}
+
+
 </style>

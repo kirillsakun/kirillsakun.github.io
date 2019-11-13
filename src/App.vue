@@ -1,8 +1,8 @@
 <template>
-  <div id="sheet">
+  <div>
     <header>
-      <router-link to="/" id="logo">
-        <a @click="menuShow = false">skA</a>
+      <router-link to="/" id="logo" @click="menuShow = false">
+        skA
       </router-link>
       <button class="icon ion-md-menu" id="show-menu-icon" @click="menuShow = true"></button>
       <transition name="slide">
@@ -15,7 +15,7 @@
       </transition>
     </header>
     <transition name="slide-page">
-      <router-view></router-view>
+      <router-view class="sheet"></router-view>
     </transition>
     <footer>
       <div class="social-media">
@@ -41,7 +41,7 @@ export default {
       menuShow: false,
       mainMenuLinks: [
         { title: "Home", url: "/" },
-        { title: "Templates", url: "/templates" },
+        { title: "Portfolio", url: "/templates" },
         { title: "Test tasks", url: "/testtasks" }
       ],
       socialMedia: [
@@ -169,9 +169,11 @@ a {
   border-image: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
   border-image-slice: 1;
 }
-#sheet {
+.sheet {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-height: calc(100vh - 10rem);
 }
 .section-title {
   width: 100%;
@@ -179,6 +181,7 @@ a {
   text-align: center;
   font-weight: 300;
   margin: 0;
+  margin-bottom: 2rem;
 }
 .underheader-mg{
   margin-top: $header-height;
@@ -194,7 +197,7 @@ a {
     width: 50%;
   }
 }
-header {  
+header {
   position: fixed;
   top: 0;
   width: 100%;

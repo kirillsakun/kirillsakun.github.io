@@ -1,6 +1,6 @@
 <template>
 	<div id="home">
-		<div id="title">
+		<div id="title" :style="{backgroundImage: `url(${mainBg})`}">
 			<h1>Kirill Sakun</h1>
 			<p>
 				Junior Frontend developer
@@ -31,14 +31,11 @@
 				</ul>
 			</div>
 		</section>
-		<section id="skills">
+		<section id="skills" :style="{backgroundImage: `url(${skillsBg})`}">
 			<h3>My skills</h3>
 			<ul>
 				<li class="skill" v-for="(skill ,index) in mySkills" :key="skill.title"> 
 					<h5>{{skill.title}}</h5>
-					<!-- <div class="logos">
-						<img v-for="img in skill.img" :key="img.title" :src="img.url" :alt="img.title">
-					</div> -->
 					<p>{{skill.description}}</p>
 					<i>{{index+1}}</i>
 				</li>
@@ -48,6 +45,9 @@
 </template>
 
 <script>
+import mainBg1 from '@/assets/img/pic1.jpg'
+import skillsBg1 from '@/assets/img/skills-bg.jpg'
+
 
 export default {
 		name: 'Home',
@@ -56,94 +56,45 @@ export default {
 				mySkills:[
 					{
 						title: 'HTML5',
-						img: [
-							{
-								url:'https://pngicon.ru/file/uploads/html5.png',
-								title: 'html'
-							}
-						],
 						description: `I learned the semantics of the language and
 						how to use tags correctly.`
 					},
 					{
 						title: 'CSS3',
-						img: [
-							{
-								url: 'https://pngicon.ru/file/uploads/css3.png',
-								title: 'css'
-							}
-						],
 						description: `I studied the ways of positioning (flexbox, float)
 						and styling elements, animation.
 						I also learned how to make adaptive cross-browser pages.`
 					},
 					{
 						title: 'SASS',
-						img: [
-							{
-								url: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/288_Sass_logo-512.png',
-								title: 'sass'
-							}
-						],
 						description: `This wonderful preprocessor helps me to write styles
 						much easier and faster. Usually I prefer to use SCSS syntax.`
 					},
 					{
 						title: 'JavaScript',
-						img: [
-							{
-								url:'https://techracho.bpsinc.jp/wp-content/uploads/2009/08/javascript.png',
-								title: 'js'
-							}
-						],
 						description: `I learned the basics of the language, working with objects, arrays, classes, DOM.
 						Also I have some skills with jQuery, but recently I try to replace it with pure js.`
 					},
 					{
 						title: 'Vue.js',
-						img: [
-							{
-								url:'https://ru.vuejs.org/images/logo.png',
-								title: 'vue'
-							}
-						],
 						description: `It is a progressive framework for building user interfaces.
 						I use it to create Single-Page Applications and reactive apps.`,
 					},
 					{
 						title: 'Vue CLI',
-						img: [
-							{
-								url:'https://ru.vuejs.org/images/logo.png',
-								title: 'Vue CLI'
-							}
-						],
 						description: `Vue CLI helps me to create Vue.js applications more easily and faster.
 						I usually use the webpack configuration.`
 					},
 					{
 						title: 'Github',
-						img: [
-							{
-								url:'',
-								title: 'github'
-							}
-						],
 						description: `I know the basics of working with GitHub,
 						understand the advantages of using it.`
 					},
 					{
 						title: 'Node.js',
-						img: [
-							{
-								url:'',
-								title: 'node'
-							}
-						],
 						description: `Coming soon...`
 					},
 				],
-
 				personalInformation:[
 					{
 						title: 'Fullname',
@@ -165,7 +116,9 @@ export default {
 						title: 'Location',
 						info: 'Minsk, Belarus'
 					}
-				]
+				],
+				mainBg: mainBg1,
+				skillsBg : skillsBg1
 			}
 		}
 	}
@@ -185,8 +138,6 @@ function parallaxId(el, koeficent) {
 
 <style lang="scss" scoped>
 
-
-
 #title{
 	height: 100vh;
 	width: 100%;
@@ -198,8 +149,8 @@ function parallaxId(el, koeficent) {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-image: url(../assets/img/pic1.jpg);
-	background-size: 100% auto;
+	//background-image: url(../assets/img/pic1.jpg);
+	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center 0;
 
@@ -277,9 +228,8 @@ section{
 }
 $lineHeight: 2rem;
 #skills{
-	background-image: url(../assets/img/skills-bg.jpg);
-	background-color: rgb(0, 0, 0);
-	background-size: 100% auto;
+	background-color: rgb(0, 27, 4);
+	background-size: cover;
 	background-position: center 0;
 	background-repeat: no-repeat;
 	color: white;
@@ -310,7 +260,6 @@ $lineHeight: 2rem;
 		position: absolute;
 		bottom: 3.5rem;
 		left: 2rem;
-		//border-radius: 0 .1 * $lineHeight .1 * $lineHeight 0;
 		background-color: rgba(255, 255, 255, 0.5);
 		height: 1rem;
 		width: calc(100% - 2rem);

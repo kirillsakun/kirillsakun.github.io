@@ -5,7 +5,7 @@
       <div class="site"
       v-for="site in sites"
       :key="site.title"
-      :style="{background: 'url('+ site.img +') no-repeat center, linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%)'}">
+      :style="{backgroundImage: 'url('+ site.img +'), linear-gradient(0deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,.5) 100%)'}">
         <a :href="site.url" target="_blank" class="site-disc">
           <h4>{{site.title}}</h4>
           <!-- <p>{{site.discription}}</p> -->
@@ -44,8 +44,10 @@
 
 <script>
 import landing1 from '../assets/img/landing1.png';
-import minskcoffee from '../assets/img/minskcoffee.png'
-import soundgenerator from '../assets/img/soundgenerator.png'
+import blog from '../assets/img/blog.png';
+import photoGuide from '../assets/img/photoGuide.png';
+
+import soundgenerator from '../assets/img/soundgenerator.png';
 export default {
   name: "Templates",
   data(){
@@ -59,19 +61,26 @@ export default {
           cond: true
         },
         {
+          title: 'PhotoGuide',
+          url: 'https://github.com/kirillsakun/photoGuide',
+          img: photoGuide,
+          tags: ['HTML5', 'CSS3', 'SCSS', 'JS'],
+          cond: true
+        },
+        {
+          title: 'Blog',
+          url: 'https://github.com/kirillsakun/minkscoffee',
+          img: blog,
+          tags: ['HTML5', 'CSS3', 'SCSS','JS', 'Vue.js', 'Nuxt', 'Express(coming soon)'],
+          cond: false
+        },
+        {
           title: 'Landing page',
-          url: 'https://kirillsakun.github.io/LandingPage',
+          url: 'https://github.com/kirillsakun/LandingPage',
           img: landing1,
           tags: ['HTML5', 'CSS3', 'SCSS'],
           cond: true
         },
-        {
-          title: 'Minsk coffee',
-          url: 'https://github.com/kirillsakun/minkscoffee',
-          img: minskcoffee,
-          tags: ['HTML5', 'CSS3', 'SCSS','JS', 'Vue.js', 'Vue-router', 'Vue-cli'],
-          cond: false
-        }
       ]
     }
   }
@@ -88,12 +97,13 @@ $b-r: 2vh;
   border-top: none;
   .site{
     height: 14.625rem;
-    width: 26rem;
-    border-radius: 1rem;
+    width: calc(33.3333% - .5rem);
+    border-radius: .5rem;
     background-blend-mode: multiply;
     padding: 1rem;
-    margin: 1rem 0;
-    background-size: cover !important;
+    margin: .5rem 0;
+    background-size: cover;
+    background-position: center;
   }
 
   .site-disc{

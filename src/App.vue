@@ -2,75 +2,39 @@
   <div>
     <header>
       <router-link to="/" id="logo" @click="menuShow = false">
-        skA
+        kis
       </router-link>
       <button class="icon ion-md-menu" id="show-menu-icon" @click="menuShow = true"></button>
       <transition name="slide">
         <nav id="menu" v-show="menuShow" @click="menuShow = false">
           <router-link v-for="link in mainMenuLinks" :key="link.title" :to="`${link.url}`">
-            <h2>{{link.title}}</h2>
+            <h2>{{ link.title }}</h2>
           </router-link>
           <button class="icon ion-md-close" id="close-menu-icon" @click="menuShow = false"></button>
         </nav>
       </transition>
     </header>
-    <transition name="slide-page">
+    <transition name="fade-page">
       <router-view class="sheet"></router-view>
     </transition>
-    <footer>
-      <div class="social-media">
-        <h4>Contact me</h4>
-        <div class="icons">
-          <a v-for="item in socialMedia" :href="item.url" :key="item.title" target="_blank">
-            <i :class="'icon ' + 'ion-logo-' + item.title.toLowerCase()"></i>
-          </a>
-        </div>
-      </div>
-    </footer>
   </div>
 </template>
 
-
-
 <script>
-
 export default {
-  name: "App",
+  name: 'App',
   data() {
     return {
       menuShow: false,
       mainMenuLinks: [
-        { title: "Home", url: "/" },
-        { title: "Portfolio", url: "/templates" },
-        { title: "Test tasks", url: "/testtasks" }
+        { title: 'Home', url: '/' },
+        { title: 'Portfolio', url: '/portfolio' },
       ],
-      socialMedia: [
-        {
-          title: "Github",
-          url: "https://github.com/kirillsakun"
-        },
-        {
-          title: "Facebook",
-          url: "https://www.facebook.com/profile.php?id=100010532382767"
-        },
-        {
-          title: "Vk",
-          url: "https://vk.com/kirill_sakun"
-        },
-        {
-          title: "Instagram",
-          url: "https://www.instagram.com/tortik_s_vishney"
-        },
-        {
-         title: "Twitter",
-         url: "https://twitter.com/tortiksvishney"
-        }
-      ]
     };
-  }
+  },
 };
 
-window.addEventListener("scroll", function() {
+window.addEventListener('scroll', function() {
   headerOpacity();
 });
 
@@ -85,13 +49,12 @@ function headerOpacity() {
 </script>
 
 <style lang="scss">
+@import url('https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap');
 
-@import url("https://unpkg.com/ionicons@4.5.5/dist/css/ionicons.min.css");
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,600&display=swap");
-
-$primary-font: "Raleway", sans-serif;
-$secondary-font: "Montserrat", sans-serif;
+$primary-font: 'Raleway', sans-serif;
+$secondary-font: 'Montserrat', sans-serif;
 $primary-color: rgb(255, 255, 255);
 $text-color: rgb(26, 26, 26);
 $default-border: 1px rgb(0, 0, 0) solid;
@@ -141,21 +104,21 @@ p {
   font-family: $secondary-font;
   margin: 0 0;
   line-height: 1.8rem;
-	text-align: justify;
+  text-align: justify;
   width: 100%;
   cursor: default;
 }
 
-h3{
-	font-size: 2.3rem;
-	font-weight: 600;
+h3 {
+  font-size: 2.3rem;
+  font-weight: 600;
 }
-input{
+input {
   cursor: pointer;
 }
-button{
-	background: none;
-	border: none;
+button {
+  background: none;
+  border: none;
   cursor: pointer;
 }
 a {
@@ -164,9 +127,9 @@ a {
   cursor: pointer;
 }
 .col-bor {
-  border-bottom: 2px solid red;
-  border-top: 2px solid red;
-  border-image: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
+  border-bottom: 2px solid rgb(110, 247, 160);
+  border-top: 2px solid rgb(110, 247, 160);
+  border-image: linear-gradient(to right, rgb(40, 202, 146), rgb(110, 247, 160));
   border-image-slice: 1;
 }
 .sheet {
@@ -183,16 +146,16 @@ a {
   margin: 0;
   margin-bottom: 2rem;
 }
-.underheader-mg{
+.underheader-mg {
   margin-top: $header-height;
 }
-.parenthesis{
+.parenthesis {
   flex-direction: column;
-  //padding-bottom: 0;
-  h1,h2{
+  h1,
+  h2 {
     margin-bottom: 2rem;
   }
-  p{
+  p {
     text-align: left;
     width: 50%;
   }
@@ -208,32 +171,34 @@ header {
   background-color: $primary-color;
   z-index: 100;
   transition: 0.2s;
-  border-top: (0.03 * $header-height) solid red;
-  border-bottom: 1px solid red;
-  border-image: linear-gradient(to right, #40e0d0, #ff8c00, #ff0080);
+  border-top: (0.03 * $header-height) solid rgb(110, 247, 160);
+  border-bottom: 1px solid rgb(110, 247, 160);
+  border-image: linear-gradient(to right, rgb(40, 202, 146), rgb(110, 247, 160));
   border-image-slice: 1;
 
   &:hover {
     opacity: 1 !important;
   }
   #logo {
-    font-size: 3rem;
+    font-size: 1.6rem;
     padding: 0 3rem;
   }
   button {
     font-size: 1.4rem;
     color: $text-color;
-    margin: 1rem;
-    padding: -1rem;
+    padding: 1.5rem 3rem;
     background: none;
     border: none;
   }
   #show-menu-icon {
     position: absolute;
-    top: 0.5rem;
-    right: 0rem;
+    right: 0;
     z-index: 1;
   }
+  #close-menu-icon {
+    padding-left: 1rem;
+  }
+
   nav {
     z-index: 5;
     transition: 1s;
@@ -253,19 +218,19 @@ header {
       }
       &::before,
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         width: 100%;
         height: 0.1rem;
         transition: transform 0.35s;
         transform: scaleX(0);
-        background: #93291e; /* fallback for old browsers */
+        background: rgb(110, 247, 160);
         background: linear-gradient(
           to right,
-          #ed213a,
-          #93291e,
-          #ed213a
-        ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+          rgb(110, 247, 160),
+          rgb(40, 202, 146),
+          rgb(110, 247, 160)
+        );
         z-index: 10;
       }
       &::before {
@@ -381,7 +346,7 @@ footer {
 
 .slide-enter-active,
 .slide-leave-active {
-  transition: 0.5s ease-out;
+  transition: 0.3s ease-out;
 }
 .slide-enter-to,
 .slide-leave {
@@ -391,34 +356,27 @@ footer {
 .slide-leave-to,
 .slide-enter {
   top: 0;
-  right: -70%;
+  right: -(410rem/16);
 }
 
-.slide-page-enter-active,
-.slide-page-leave-active {
+.fade-page-enter-active,
+.fade-page-leave-active {
   transition: 0.7s ease-in-out;
   position: fixed;
-  // top: 0;
-  // left: 0;
 }
 
-.slide-page-enter {
-  //left: 100%;
+.fade-page-enter {
   opacity: 0;
 }
-.slide-page-enter-to {
-  //left: 0;
+.fade-page-enter-to {
   opacity: 1;
 }
-.slide-page-leave {
-  //left: 0;
+.fade-page-leave {
   opacity: 1;
 }
-.slide-page-leave-to {
-  //left: -100%;
+.fade-page-leave-to {
   opacity: 0;
 }
-
 
 @media (max-width: 1060px) {
   header {
@@ -451,21 +409,20 @@ footer {
       right: -100%;
     }
   }
-  .parenthesis{
-    p{
+  .parenthesis {
+    p {
       text-align: left;
       width: 80%;
     }
   }
 }
-@media (max-width: 580px){
-  .parenthesis{
-    p{
+@media (max-width: 580px) {
+  .parenthesis {
+    p {
       text-align: left;
       width: 100%;
     }
   }
 }
 </style>
-
 

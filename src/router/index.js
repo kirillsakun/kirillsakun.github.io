@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import TestTasks from '@/components/TestTasks'
-import Templates from '@/components/Templates'
+import Portfolio from '@/components/Portfolio'
 import NotFoundComponent from '@/components/NotFoundComponent'
 
 Vue.use(Router);
@@ -16,14 +15,9 @@ export default new Router({
       component: Home
     },
     {
-      path: "/templates",
-      name: "Templates",
-      component: Templates
-    },
-    {
-      path: "/testtasks",
-      name: "TestTasks",
-      component: TestTasks
+      path: "/portfolio",
+      name: "Portfolio",
+      component: Portfolio
     },
     {
       path: "*",

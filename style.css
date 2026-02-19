@@ -42,8 +42,8 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--color--background: #1a1a1a;
-		--color--text: #eeeeee;
+		/*--color--background: #1a1a1a;*/
+		/*--color--text: #eeeeee;*/
 	}
 }
 
@@ -141,7 +141,7 @@
 
 	&.heading--sm {
 		font-size: 1rem;
-		margin-block-start: 0.5em;
+		margin-block-start: 0.75em;
 	}
 }
 

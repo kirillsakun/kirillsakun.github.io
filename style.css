@@ -37,7 +37,7 @@
 	--body--block-padding: clamp(2rem, 10vw, 4rem);
 	--section--max-inline-size: 50rem;
 
-	--list--columns-count: 4;
+	--list--columns-count: 3;
 	--list--columns-gap: 1rem;
 }
 

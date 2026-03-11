@@ -28,9 +28,10 @@
 }
 
 :root {
-	--color--background: #f5f5f5;
-	--color--text: #000000;
-	--border--base: 2px solid var(--color--text);
+	--color--background: #faf9f7;
+	--color--text: #2d2d2d;
+	--color--border: #d4d0ca;
+	--border--base: 1px solid var(--color--border);
 
 	--body--inline-padding: clamp(1rem, 5vw, 2rem);
 	--body--block-padding: clamp(2rem, 10vw, 4rem);
@@ -64,7 +65,7 @@
 /* Main styles */
 .body {
 	font-family: 'Roboto', sans-serif;
-	line-height: 1.4;
+	line-height: 1.5;
 	color: var(--color--text);
 	background-color: var(--color--background);
 	margin: 0;
@@ -132,6 +133,7 @@
 	&.heading--lg {
 		font-size: 1.75rem;
 		text-transform: uppercase;
+		letter-spacing: 0.015em;
 		margin-block-end: 0.5em;
 	}
 
@@ -169,6 +171,8 @@
 	.address__link {
 		color: var(--color--text);
 		text-decoration: underline;
+		text-decoration-color: var(--color--border);
+		text-underline-offset: 0.15em;
 	}
 }
 

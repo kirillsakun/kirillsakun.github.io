@@ -218,6 +218,14 @@
 			border-block-start: var(--border--base);
 			margin-block-end: var(--gap);
 		}
+		@media print {
+			/* It is the start of the page, we don't need a divider there */
+			&:nth-child(2) {
+				&::before {
+					content: none;
+				}
+			}
+		}
 	}
 
 	& .experience__header {

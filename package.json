@@ -9,7 +9,7 @@
     "preview": "vite preview --outDir docs"
   },
   "devDependencies": {
-    "vite": "^6.3.0"
+    "vite": "^6.4.4"
   },
   "dependencies": {
     "modern-normalize": "^2.0.0"
